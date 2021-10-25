@@ -40,7 +40,7 @@ def some_function2():
 
 def main():
     # start spark code
-    spark = SparkSession.builder.appName(AppName+"_"+str(dt_string)).getOrCreate()
+    spark = SparkSession.builder.master("spark://ip-172-31-0-10.ec2.internal:7077").appName(AppName+"_"+str(dt_string)).getOrCreate()
     spark.sparkContext.setLogLevel("ERROR")
     logger.info("Starting spark application")
 
@@ -52,7 +52,7 @@ def main():
 
     #do something here
     logger.info("Reading CSV File")
-    df_category = spark.read.csv("/opt/datasets/ChicagoData.csv")
+    df_category = spark.read.csv("/opt/databases/ChicagoData.csv")
     # spark.read.option("delimiter","|").csv("hdfs:///var/data/category_pipe.txt")
     logger.info("Previewing CSV File Data")
     df_category.show(truncate=False)
