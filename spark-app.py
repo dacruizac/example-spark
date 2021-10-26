@@ -40,7 +40,7 @@ def some_function2():
 
 def main():
     # start spark code
-    spark = SparkSession.builder.master("spark://ip-172-31-0-10.ec2.internal:7077").appName(AppName+"_"+str(dt_string)).getOrCreate()
+    spark = SparkSession.builder.appName(AppName+"_"+str(dt_string)).getOrCreate()
     spark.sparkContext.setLogLevel("ERROR")
     logger.info("Starting spark application")
 
