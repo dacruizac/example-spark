@@ -58,7 +58,7 @@ def main():
     df_category.show(truncate=False)
 
     logger.info("Ending spark application")
-    # end spark code
+    # end stopspark code
     spark.stop()
     return None
 
