@@ -15,6 +15,9 @@ from pyspark.sql.functions import col
 import sys,logging
 from datetime import datetime
 
+import sparkdl
+
+
 # Logging configuration
 formatter = logging.Formatter('[%(asctime)s] %(levelname)s @ line %(lineno)d: %(message)s')
 handler = logging.StreamHandler(sys.stdout)
